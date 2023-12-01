@@ -1,4 +1,5 @@
 import InputView from './Views/InputView.js';
+import Validator from '../utils/Validator.js';
 
 class RacingCarController {
   async play() {
@@ -7,6 +8,11 @@ class RacingCarController {
 
   async readCars() {
     const carsArray = await InputView.readCars();
+    this.handleCarsArray(carsArray);
+  }
+
+  handleCarsArray(carsArray) {
+    Validator.validateCarName(carsArray);
   }
 }
 
