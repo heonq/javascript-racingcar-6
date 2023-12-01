@@ -1,7 +1,11 @@
 import InputView from './Views/InputView.js';
 import Validator from '../utils/Validator.js';
+import RacingCar from './RacingCar.js';
+import OutputView from './Views/OutputView.js';
 
 class RacingCarController {
+  #racingCar;
+
   async play() {
     await this.readCars();
   }
@@ -13,6 +17,7 @@ class RacingCarController {
 
   handleCarsArray(carsArray) {
     Validator.validateCarName(carsArray);
+    this.#racingCar = new RacingCar(carsArray);
     this.readTrialCount();
   }
 
@@ -23,6 +28,18 @@ class RacingCarController {
 
   handleTrialCount(trialCount) {
     Validator.validateTrialCount(trialCount);
+    OutputView.printResultMessage();
+    for (let i = 0; i < trialCount; i += 1) {
+      this.moveAndPrint();
+    }
+  }
+
+  moveAndPrint() {
+    this.#racingCar.tryMove();
+    this.#racingCar
+      .getNamesAndDistances()
+      .forEach(([name, distance]) => OutputView.printDistance(name, distance));
+    OutputView.printLineBreak();
   }
 }
 
