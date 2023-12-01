@@ -10,7 +10,7 @@ const OutputView = {
   },
 
   printDistance(name, distance) {
-    Console.print(name + MESSAGES.carNameDelimiter + MESSAGES.distance.repeat(distance));
+    Console.print(name + MESSAGES.nameDelimiter + MESSAGES.distance.repeat(distance));
   },
 };
 
