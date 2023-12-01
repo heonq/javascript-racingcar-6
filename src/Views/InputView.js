@@ -6,6 +6,10 @@ const InputView = {
     const carNames = await Console.readLineAsync(MESSAGES.carNameQuery);
     return carNames.split(MESSAGES.carNameDelimiter);
   },
+  async readTrialCount() {
+    const trialCount = await Console.readLineAsync(MESSAGES.trialCountQuery);
+    return Number(trialCount);
+  },
 };
 
 export default InputView;
