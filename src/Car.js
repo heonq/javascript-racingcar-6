@@ -15,6 +15,10 @@ class Car {
     const value = Random.pickNumberInRange(VALUES.minRandomValue, VALUES.maxRandomValue);
     if (value >= VALUES.minMoveValue) this.#distance += 1;
   }
+
+  getNameAndDistance() {
+    return [this.#name, this.#distance];
+  }
 }
 
 export default Car;
