@@ -5,7 +5,7 @@ const MESSAGES = Object.freeze({
   carNameDelimiter: ',',
   trialCountQuery: '시도할 횟수는 몇 회인가요?\n',
   lineBreak: '\n',
-  resultMessage: '실행결과\n',
+  resultMessage: '실행결과',
   nameDelimiter: ' : ',
   distance: '-',
   finalWinner: '최종 우승자',
