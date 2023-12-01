@@ -8,7 +8,7 @@ const MESSAGES = Object.freeze({
   resultMessage: '실행결과',
   nameDelimiter: ' : ',
   distance: '-',
-  finalWinner: '최종 우승자',
+  finalWinner: '최종 우승자 : ',
   winnerDelimiter: ', ',
   invalidNameLength: `${PREFIX} 자동차의 이름은 5글자를 초과할 수 없습니다.`,
   invalidCarCount: `${PREFIX} 자동차는 최소 2대 이상이어야 합니다.`,
