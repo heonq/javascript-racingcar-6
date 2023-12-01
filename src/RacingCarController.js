@@ -18,6 +18,11 @@ class RacingCarController {
 
   async readTrialCount() {
     const trialCount = await InputView.readTrialCount();
+    this.handleTrialCount(trialCount);
+  }
+
+  handleTrialCount(trialCount) {
+    Validator.validateTrialCount(trialCount);
   }
 }
 
