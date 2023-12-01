@@ -17,4 +17,16 @@ describe('유효성 검사 테스트', () => {
       expect(() => Validator.validateCarName(validCarsArray)).not.toThrow(),
     );
   });
+  test('잘못된 시도 횟수에 대한 유효성 검사 기능 테스트', () => {
+    const invalidTrialCountArray = [-1, 0, '다섯번', 3.5];
+    invalidTrialCountArray.forEach((invalidTrialCount) =>
+      expect(() => Validator.validateTrialCount(invalidTrialCount)).toThrow(),
+    );
+  });
+  test('유효한 시도 횟수에 대한 유효성 검사 기능 테스트', () => {
+    const validTrialCountArray = [1, 2, 3, 4, 100];
+    validTrialCountArray.forEach((validTrialCount) =>
+      expect(() => Validator.validateTrialCount(validTrialCount)).not.toThrow(),
+    );
+  });
 });
