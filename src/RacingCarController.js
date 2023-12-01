@@ -32,6 +32,7 @@ class RacingCarController {
     for (let i = 0; i < trialCount; i += 1) {
       this.moveAndPrint();
     }
+    this.printWinners();
   }
 
   moveAndPrint() {
@@ -40,6 +41,10 @@ class RacingCarController {
       .getNamesAndDistances()
       .forEach(([name, distance]) => OutputView.printDistance(name, distance));
     OutputView.printLineBreak();
+  }
+
+  printWinners() {
+    OutputView.printWinner(this.#racingCar.getWinners());
   }
 }
 

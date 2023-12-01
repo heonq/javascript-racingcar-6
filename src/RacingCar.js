@@ -14,6 +14,12 @@ class RacingCar {
   getNamesAndDistances() {
     return this.#cars.map((car) => car.getNameAndDistance());
   }
+
+  getWinners() {
+    const sortedCars = this.getNamesAndDistances().sort((carA, carB) => carB[1] - carA[1]);
+    const winners = sortedCars.filter((car) => car[1] === sortedCars[0][1]).map((car) => car[0]);
+    return winners;
+  }
 }
 
 export default RacingCar;

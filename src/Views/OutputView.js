@@ -13,6 +13,9 @@ const OutputView = {
   printDistance(name, distance) {
     Console.print(name + MESSAGES.nameDelimiter + MESSAGES.distance.repeat(distance));
   },
+  printWinner(winners) {
+    Console.print(MESSAGES.finalWinner + winners.join(MESSAGES.winnerDelimiter));
+  },
 };
 
 export default OutputView;
