@@ -6,6 +6,7 @@ const OutputView = {
     Console.print(MESSAGES.lineBreak);
   },
   printResultMessage() {
+    this.printLineBreak();
     Console.print(MESSAGES.resultMessage);
   },
 
